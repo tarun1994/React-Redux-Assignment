@@ -1,38 +1,232 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+  /* ========================== MAIN NAVIGATION ============================ */
+
+
+ h2, h3, h4, h5{
+  font-family:'Josefin Sans';
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 span{
+  color:white;
+  font-family:Impact;
+  letter-spacing: 1px;
+  font-size:24px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.wrapper {
+  z-index: 3;
+  width: 100%;
+  position: fixed;
+  background:
+  linear-gradient(
+    rgba(56,54, 58, 1), rgba(35, 33, 39, 1)
+  );
+  height: 60px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center; 
+  box-shadow: 0 1px 6px 0 rgba(64,196,253,1);
+}
+
+
+
+
+/* ========================= RESPONSIVE CLASSES ============================ */
+.response {
+  height: 170px;
+  transition: 0.4s ease-in-out; 
+}
+  @media (min-width: 867px) {
+    .response {
+      height: 70px;
+      transition: none; 
+    } 
+  }
+
+  .active{
+    background-color:rgb(52,52,52);
+    color: white;
+  }
+  .middle {
+    transition: .5s ease;
+    opacity: 0;
+    color: white;
+    width:190px;
+    position: absolute;
+    transform: translate(-2%, -8%);
+    -ms-transform: translate(-2%, -8%);
+    text-align: center;
+  }
+  
+  .movie-item:hover .movie-cover{
+    opacity: 0.1;
+  }
+  
+  .movie-item:hover .middle {
+    opacity: 1;
+  }
+  .text {
+    font-size: 12px;
+  }
+
+
+  /* ========================== MOVIE CONTAINER ============================ */
+
+  .movie-container{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    padding:30px 10px;
+    background-color:rgba(36,35,41);
+   
+  }
+  .movie-item{
+    width:50vh;
+    height:70vh;
+    padding:2px 3px;
+    margin:5px;
+   background-color:rgb(43,42,45);
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction:column;
+    box-shadow: 0 0 4px rgba(0,0,0,0.6), 0 3px 6px rgba(0,0,0,0.6);
+    cursor:pointer;
+    transition:0.3s;
+  }
+  .movie-item:hover{
+    box-shadow: 0 0 7px white, 0 0 7px white;
+   
+  }
+  .text-container{
+    display:flex;
+    flex-direction:row;
+    flex-wrap: nowrap;
+    background-color:black;
+    width:100%;
+    padding:10px 0;
+    text-transform: uppercase;
+    justify-content: center;
+    border:1px solid black;
+  }
+.text-container h6{
+  color:white;
+  margin:0;
+  white-space: nowrap;
+  overflow: hidden;
+  padding:0 5px;
+  font-weight:normal;
+}
+
+  .wrap{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction:column;
+  }
+  
+  .movie-cover{
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border:1px solid black;
+    position: relative;
+  }
+  @media(min-width:568px){
+    .wrap{
+      flex-direction:row;
+      flex-wrap: wrap;
+    }
+    .movie-item{
+      width:195px;
+      height:295px;
+    }
+  }
+  @media(min-width:2140px){
+    .movie-container{
+      width:2140px;
+    }
+  }
+  
+  /* ===================== MOVIE RATING ================= */
+  .movie-rating {
+    position: absolute;
+    right: 0px;
+    top:0px;
+    width: 40px;
+    height: 25px;
+    border-radius: 0 0 0 7px;
+    background: rgb(0,0,0, 0.7);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+    z-index:10;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.3), 0 3px 6px rgba(0,0,0,0.3);
+  }
+  .movie-rating h6{
+    color:white;
+
+  }
+  
+  .popular {
+    display: flex;
+    
+  }
+
+
+button{
+  height:28px; 
+  width:118px; 
+  margin: 10px -50px; 
+  position:relative;
+  top:50%; 
+  left:50%;
+}
+
+.outer-container {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.85) 10%, rgba(0, 0, 0, 0.2) 40%, rgba(0, 0, 0, 0.95) 90%);
+  background-attachment: fixed;
+  margin:0;
+  height: 100%;
+  width:100%;
+  display:flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items:center
 }
 
-.App-link {
-  color: #61dafb;
+.poster img{
+ height:100%;
+ width:100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media(min-width:867px){
+  
+ 
+  .poster{
+    width:48%;
   }
-  to {
-    transform: rotate(360deg);
+ 
+}
+@media(min-width:1075px){
+  
+  .poster{
+    width:43%;
+    
   }
+ 
+}
+
+
+
+.main-footer{
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items:center;
+  background:black;
+  color:grey;
+  height:100px;
 }

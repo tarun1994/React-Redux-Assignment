@@ -11,7 +11,7 @@ class Movie extends Component {
         return(
             <div>
                 
-            <div className="movie-item"  >
+            <div className="movie-item">
                     <div className="movie-cover" style={styles}>
                         <div className="movie-rating"><span className="star"></span><h6>{movie.vote_average}</h6></div>
                     </div>

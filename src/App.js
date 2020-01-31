@@ -47,7 +47,7 @@ return (
   <Provider store={store}>
       <div className="App">
      <Movies/>
-         /> 
+         
       
       <footer className="main-footer">
         <h4>Designed & developed by Tarun Saini</h4>
@@ -58,15 +58,4 @@ return (
 )};
 };
 export default App;
-// const MapStateToProps = (state) => {
-//     return {
-//     movies: state.movies,
-//     users: state.users
-// };
-// };
-// const MapDispatchToProps = (dispatch) => {
-//     return {
-//     updateMovies: ()=> dispatch(updateMovies),
-//     fetchUsers: ()=> dispatch(fetchUsers)
-// };
-// };
+
